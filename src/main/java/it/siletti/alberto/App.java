@@ -2,12 +2,6 @@ package it.siletti.alberto;
 
 import com.drew.imaging.FileType;
 import com.drew.imaging.FileTypeDetector;
-import com.drew.imaging.ImageMetadataReader;
-import com.drew.metadata.Directory;
-import com.drew.metadata.Metadata;
-import com.drew.metadata.Tag;
-import com.drew.metadata.mov.QuickTimeDictionary;
-import com.drew.metadata.mov.QuickTimeDirectory;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -28,9 +22,7 @@ import javafx.stage.Stage;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 
 
 public class App extends Application {
@@ -141,7 +133,7 @@ public class App extends Application {
 
     private List<File> showFileChooser() {
         FileChooser fileChooser = new FileChooser();
-        fileChooser.setInitialDirectory(new File("C:\\Users\\Alby\\Downloads\\iCloud Photos"));
+        //fileChooser.setInitialDirectory(new File("C:\\Users\\Alby\\Downloads\\iCloud Photos"));
         fileChooser.getExtensionFilters().addAll(
                 //        new FileChooser.ExtensionFilter("Text Files", "*.txt"),
                 //      new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"),
@@ -158,8 +150,7 @@ public class App extends Application {
 //            return Optional.empty();
 //        }
 
-        List<File> selectedFiles = fileChooser.showOpenMultipleDialog(null);
-        return selectedFiles;
+        return fileChooser.showOpenMultipleDialog(null);
 
     }
 
